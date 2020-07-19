@@ -1,0 +1,40 @@
+downgrade numpy
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+pip3 uninstall numpy
+pip3 install numpy==1.16.4
+pip install scikit-learn
+numpy                              1.18.1  --current to be 1.16.4
+
+
+log monitoring by tensorboard 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Run tensorboard 
+TensorBoard 1.14.0 at http://DESKTOP-TOR:6006/ (Press CTRL+C to quit)
+tensorboard --logdir=logs/
+
+train : 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+1. cmd > go to e: E:\Workspace\MyProject\mask_rcnn_damage_detection
+2. type command 
+python custom.py train --dataset=E:\Workspace\MyProject\mask_rcnn_damage_detection\customImages --weights=coco 
+tensorboard --logdir=logs/
+
+
+20200716--------------------------------
+update data set with my dents 
+and will train (from the team) Lot#2
+result : train done but val loss high
+
+
+
+20200718--------------------------------
+update data set with my dents (from the team) Lot #1
+and will train 
+result : 
+
+
+
+
+
+
+
