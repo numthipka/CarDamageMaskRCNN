@@ -74,8 +74,8 @@ class Config(object):
     NUM_CLASSES = 1  # Override in sub-classes
 
     # Length of square anchor side in pixels
-    RPN_ANCHOR_SCALES = (32, 64, 128, 256, 512)
-
+    #RPN_ANCHOR_SCALES = (32, 64, 128, 256, 512) # 202007122 :: numthip comment
+    RPN_ANCHOR_SCALES = (16,32, 64, 128, 256) # 202007122 :: numthip revise from (32, 64, 128, 256, 512) to (16,32, 64, 128, 256)
     # Ratios of anchors at each cell (width/height)
     # A value of 1 represents a square anchor, and 0.5 is a wide anchor
     RPN_ANCHOR_RATIOS = [0.5, 1, 2]
@@ -98,8 +98,8 @@ class Config(object):
 
     # If enabled, resizes instance masks to a smaller size to reduce
     # memory load. Recommended when using high-resolution images.
-    USE_MINI_MASK = True
-    MINI_MASK_SHAPE = (56, 56)  # (height, width) of the mini-mask
+    USE_MINI_MASK = True  # 20200723 :: numthip revise from true to false
+    MINI_MASK_SHAPE = (56, 56)  # (height, width) of the mini-mask # 20200723 :: numthip revise 56 true to 28*28
 
     # Input image resizing
     # Generally, use the "square" resizing mode for training and predicting
@@ -150,7 +150,7 @@ class Config(object):
 
     # Shape of output mask
     # To change this you also need to change the neural network mask branch
-    MASK_SHAPE = [28, 28]
+    MASK_SHAPE = [28, 28]# 202007122 :: numthip revise from 28 from 56
 
     # Maximum number of ground truth instances to use in one image
     MAX_GT_INSTANCES =256 # 202007121 :: numthip revise from 100 as defeault to 256

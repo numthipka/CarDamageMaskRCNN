@@ -130,3 +130,7 @@ dmypy.json
 
 logs/
 *.h5
+mask_rcnn_damage_detection/customImages
+mask_rcnn_damage_detection/customImages-priya-original
+mask_rcnn_damage_detection/customImages-400
+mask_rcnn_damage_detection/customImages-590

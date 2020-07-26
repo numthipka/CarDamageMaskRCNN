@@ -132,7 +132,7 @@ class CustomDataset(utils.Dataset):
 
         # Add images
         for a in annotations:
-            print('a:', a['regions'].values())
+            # print('a:', a['regions'].values()) numthip comment 20200726
             # Get the x, y coordinaets of points of the polygons that make up
             # the outline of each object instance. There are stores in the
             # shape_attributes (see json format above)
