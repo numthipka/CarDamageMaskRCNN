@@ -103,7 +103,7 @@ class CustomDataset(utils.Dataset):
         self.add_class("damage", 1, "damage")
 
         # Train or validation dataset?
-        assert subset in ["train", "val"]
+        assert subset in ["train", "val", "test"]
         dataset_dir = os.path.join(dataset_dir, subset)
 
         # Load annotations
