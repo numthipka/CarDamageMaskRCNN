@@ -82,10 +82,10 @@ class CustomConfig(Config):
     # numthip 20200713 revise from 100 (original value) to be 1000
     # numthip 20200716 revise from 1000 to be 100
     # numthip 20200716 revise from 100 to be 200 	 	
-    STEPS_PER_EPOCH = 200
+    STEPS_PER_EPOCH = 200 # 20200730: numthip revise from 200 to be 600
 
     # Skip detections with < 90% confidence
-    DETECTION_MIN_CONFIDENCE = 0.9
+    DETECTION_MIN_CONFIDENCE = 0.7 # 20200730: numthip revise from 0.9 to be 0.7
 
 
 ############################################################
