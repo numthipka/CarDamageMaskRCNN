@@ -40,7 +40,7 @@ class Config(object):
     # Validation stats are also calculated at each epoch end and they
     # might take a while, so don't set this too small to avoid spending
     # a lot of time on validation stats.
-    STEPS_PER_EPOCH = 600 # 202007121 :: numthip revise from 1000 to 600
+    STEPS_PER_EPOCH = 100 # 202007121 :: numthip revise from 1000 to 600
 
     # Number of validation steps to run at the end of every training epoch.
     # A bigger number improves accuracy of validation stats, but slows
@@ -74,8 +74,8 @@ class Config(object):
     NUM_CLASSES = 1  # Override in sub-classes
 
     # Length of square anchor side in pixels
-    # 20200730 : Numthip K. Comment RPN_ANCHOR_SCALES = (32, 64, 128, 256, 512)
-    RPN_ANCHOR_SCALES = (8, 16, 32, 64, 128)
+    # 20200730 : Numthip K. Comment RPN_ANCHOR_SCALES = (32, 64, 128, 256, 512) (8, 16, 32, 64, 128)
+    RPN_ANCHOR_SCALES = (32, 64, 128, 256, 512)
 
 
     # Ratios of anchors at each cell (width/height)
@@ -124,9 +124,9 @@ class Config(object):
     #         size IMAGE_MIN_DIM x IMAGE_MIN_DIM. Can be used in training only.
     #         IMAGE_MAX_DIM is not used in this mode.
     IMAGE_RESIZE_MODE = "square"
-    IMAGE_MIN_DIM = 512  # 202007121 :: numthip revise from 800 as defeault to 512
+    IMAGE_MIN_DIM = 800  # 202007121 :: numthip revise from 800 as defeault to 512
 	# 20200712 : Numthip edit from 1024 to be 512
-    IMAGE_MAX_DIM = 512
+    IMAGE_MAX_DIM = 1024
     # Minimum scaling ratio. Checked after MIN_IMAGE_DIM and can force further
     # up scaling. For example, if set to 2 then images are scaled up to double
     # the width and height, or more, even if MIN_IMAGE_DIM doesn't require it.
@@ -166,7 +166,7 @@ class Config(object):
 
     # Minimum probability value to accept a detected instance
     # ROIs below this threshold are skipped
-    DETECTION_MIN_CONFIDENCE = 0.7
+    DETECTION_MIN_CONFIDENCE = 0.8
 
     # Non-maximum suppression threshold for detection
     DETECTION_NMS_THRESHOLD = 0.3
@@ -175,11 +175,11 @@ class Config(object):
     # The Mask RCNN paper uses lr=0.02, but on TensorFlow it causes
     # weights to explode. Likely due to differences in optimizer
     # implementation.
-    LEARNING_RATE = 0.006 # 20200730 : numthip revise 0.001 to be 0.006
+    LEARNING_RATE = 0.001 # 20200730 : numthip revise 0.001 to be 0.006
     LEARNING_MOMENTUM = 0.9
 
     # Weight decay regularization
-    WEIGHT_DECAY = 0.006 # 20200730 : numthip revise 0.001 to be 0.006
+    WEIGHT_DECAY = 0.0001 # 20200730 : numthip revise 0.001 to be 0.006
 
     # Loss weights for more precise optimization.
     # Can be used for R-CNN training setup.

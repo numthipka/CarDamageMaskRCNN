@@ -40,7 +40,7 @@ class Config(object):
     # Validation stats are also calculated at each epoch end and they
     # might take a while, so don't set this too small to avoid spending
     # a lot of time on validation stats.
-    STEPS_PER_EPOCH = 1000
+    STEPS_PER_EPOCH = 100
 
     # Number of validation steps to run at the end of every training epoch.
     # A bigger number improves accuracy of validation stats, but slows
@@ -73,8 +73,8 @@ class Config(object):
     NUM_CLASSES = 1  # Override in sub-classes
 
     # Length of square anchor side in pixels
-    # 20200730 : numthip comment RPN_ANCHOR_SCALES = (32, 64, 128, 256, 512)
-    RPN_ANCHOR_SCALES = (8, 16, 32, 64, 128)
+    # 20200730 : numthip comment RPN_ANCHOR_SCALES = (32, 64, 128, 256, 512) (8, 16, 32, 64, 128)
+    RPN_ANCHOR_SCALES = (32, 64, 128, 256, 512)
 
     # Ratios of anchors at each cell (width/height)
     # A value of 1 represents a square anchor, and 0.5 is a wide anchor
@@ -170,7 +170,7 @@ class Config(object):
 
     # Minimum probability value to accept a detected instance
     # ROIs below this threshold are skipped
-    DETECTION_MIN_CONFIDENCE = 0.7
+    DETECTION_MIN_CONFIDENCE = 0.8
 
     # Non-maximum suppression threshold for detection
     DETECTION_NMS_THRESHOLD = 0.3
